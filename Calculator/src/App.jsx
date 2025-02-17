@@ -1,40 +1,34 @@
-import React,{useState} from 'react'
-import './index.css';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-const App = () => {
-  const [input,setInput] = useState("");
-  const [result,setResult] = useState(0);
-  const handler = e =>{
-    setInput(e.target.value);
-  }
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div>
-      <center>
-        <input type="text" value={input} name="input" onChange={handler} />
-        <br />
-        <button onClick={() => setResult(eval(input))}>Result</button>
-        <h4>Result is : {result}</h4>
-
-        <button onClick={() => setInput(input+'1')}>1</button>
-        <button onClick={() => setInput(input+'2')}>2</button>
-        <button onClick={() => setInput(input+'3')}>3</button>
-        <button onClick={() => setInput(input+'4')}>4</button>
-        <button onClick={() => setInput(input+'5')}>5</button><br />
-        
-        <button onClick={() => setInput(input+'6')}>6</button>
-        <button onClick={() => setInput(input+'7')}>7</button>
-        <button onClick={() => setInput(input+'8')}>8</button>
-        <button onClick={() => setInput(input+'9')}>9</button>
-        <button onClick={() => setInput(input+'0')}>0</button><br />
-
-        <button onClick={() => setInput(input+'+')}>+</button>
-        <button onClick={() => setInput(input+'-')}>-</button>
-        <button onClick={() => setInput(input+'*')}>*</button>
-        <button onClick={() => setInput(input+'/')}>/</button>
-        <button onClick={() => {setInput('');setResult(0)}}>clr</button><br /> 
-
-      </center>
-    </div>
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
   )
 }
 
